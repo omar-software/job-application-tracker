@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/applications")
+@CrossOrigin(origins = "http://localhost:5173")
 public class JobApplicationController {
 
     private final JobApplicationService jobApplicationService;
@@ -48,7 +49,7 @@ public class JobApplicationController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    // Bewerbung löschen
+    // Bewerbung loeschen
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteApplication(@PathVariable Long id) {
         boolean deleted = jobApplicationService.deleteApplication(id);
