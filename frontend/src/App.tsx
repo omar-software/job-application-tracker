@@ -42,6 +42,7 @@ function App() {
   const [applications, setApplications] = useState<JobApplication[]>([]);
   const [selectedJob, setSelectedJob] = useState<JobOffer | null>(null);
   const [showAdmin, setShowAdmin] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
 
   const [statusFilter, setStatusFilter] = useState<ApplicationStatus | "ALL">("ALL");
 
@@ -83,6 +84,7 @@ function App() {
   function handleApplyClick(job: JobOffer) {
     setSelectedJob(job);
     setShowAdmin(false);
+    setSuccessMessage("");
   }
 
   // Bewerbungsformular schliessen
@@ -98,6 +100,7 @@ function App() {
   // Neue Bewerbung speichern
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
+    setSuccessMessage("");
 
     if (!selectedJob) {
       return;
@@ -120,7 +123,7 @@ function App() {
     await loadApplications();
 
     handleCancelApplication();
-    alert("Ihre Bewerbung wurde erfolgreich gesendet.");
+    setSuccessMessage("Ihre Bewerbung wurde erfolgreich gesendet.");
   }
 
   // Status einer Bewerbung aktualisieren
@@ -166,6 +169,12 @@ function App() {
       </header>
 
       <main className="content">
+        {successMessage && (
+          <section className="success-message">
+            {successMessage}
+          </section>
+        )}
+
         {!showAdmin && !selectedJob && (
           <section className="card">
             <h2>Aktuelle Jobangebote</h2>
@@ -269,17 +278,17 @@ function App() {
                     <div className="application-info">
                       <h3>{application.jobTitle}</h3>
                       <p>Unternehmen: {application.companyName}</p>
-                     <p>
-  Bewerber:{" "}
-  {application.firstName || application.lastName
-    ? `${application.firstName} ${application.lastName}`
-    : "Keine Angabe"}
-</p>
-<p>E-Mail: {application.email || "Keine Angabe"}</p>
-<p>Telefon: {application.phone || "Keine Angabe"}</p>
-<p>Status: {getStatusText(application.status)}</p>
-<p>Datum: {application.applicationDate || "Keine Angabe"}</p>
-<p>Anschreiben: {application.coverLetter || "Keine Angabe"}</p>
+                      <p>
+                        Bewerber:{" "}
+                        {application.firstName || application.lastName
+                          ? `${application.firstName} ${application.lastName}`
+                          : "Keine Angabe"}
+                      </p>
+                      <p>E-Mail: {application.email || "Keine Angabe"}</p>
+                      <p>Telefon: {application.phone || "Keine Angabe"}</p>
+                      <p>Status: {getStatusText(application.status)}</p>
+                      <p>Datum: {application.applicationDate || "Keine Angabe"}</p>
+                      <p>Anschreiben: {application.coverLetter || "Keine Angabe"}</p>
                     </div>
 
                     <div className="application-actions">
