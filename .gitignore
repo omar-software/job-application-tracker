@@ -20,3 +20,8 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Test and security reports
+playwright-report/
+test-results/
+security-reports/

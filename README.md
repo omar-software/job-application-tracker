@@ -544,7 +544,23 @@ Umsetzung von CRUD-Funktionen, Statusverwaltung und Datenbankeinsicht über pgAd
 
 Veröffentlichung auf GitHub inklusive strukturierter Projektdokumentation.
 
+## Testing, CI and Security
 
+### Playwright End-to-End Tests
+
+The project includes automated end-to-end tests with Playwright and TypeScript.
+
+The tests cover:
+
+- Displaying job offers
+- Submitting a job application
+- Opening the admin area
+
+Run tests locally:
+
+```bash
+cd frontend
+npx playwright test
 
 \## License
 
