@@ -16,16 +16,19 @@ body {
 .header {
   background-color: #1f2937;
   color: white;
-  padding: 32px;
+  padding: 40px 24px;
   text-align: center;
 }
 
 .header h1 {
-  margin: 0 0 8px;
+  margin: 0 0 12px;
+  font-size: 48px;
+  line-height: 1.1;
 }
 
 .header p {
   margin: 0;
+  font-size: 18px;
 }
 
 .content {
@@ -43,6 +46,13 @@ body {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
 }
 
+.card h2 {
+  color: #1f2937;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 .form {
   display: grid;
   gap: 12px;
@@ -56,10 +66,18 @@ textarea {
   border: 1px solid #ccd1d5;
   border-radius: 8px;
   font-size: 14px;
+  background-color: white;
+  color: #222;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #777;
 }
 
 textarea {
   min-height: 90px;
+  resize: vertical;
 }
 
 button {
@@ -88,14 +106,17 @@ button:hover {
   border: 1px solid #e5e7eb;
   border-radius: 10px;
   padding: 16px;
+  background-color: #f9fafb;
 }
 
 .application-item h3 {
   margin: 0 0 8px;
+  color: #1f2937;
 }
 
 .application-item p {
   margin: 4px 0;
+  color: #333;
 }
 
 .application-item a {
