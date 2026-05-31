@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HealthController {
 
-    // Ein einfacher Endpunkt zum Testen, ob das Backend läuft
+    // Ein einfacher Endpunkt zum Testen, ob das Backend aktiv ist
     @GetMapping("/api/health")
     public String healthCheck() {
-        return "Backend läuft erfolgreich";
+        return "Backend ist aktiv";
     }
 }
