@@ -18,6 +18,17 @@ public class JobApplication {
 
     private String jobUrl;
 
+    private String firstName;
+
+    private String lastName;
+
+    private String email;
+
+    private String phone;
+
+    @Column(length = 2000)
+    private String coverLetter;
+
     @Enumerated(EnumType.STRING)
     private ApplicationStatus status;
 
@@ -38,6 +49,10 @@ public class JobApplication {
 
         if (this.status == null) {
             this.status = ApplicationStatus.APPLIED;
+        }
+
+        if (this.applicationDate == null) {
+            this.applicationDate = LocalDate.now();
         }
     }
 
@@ -76,6 +91,46 @@ public class JobApplication {
 
     public void setJobUrl(String jobUrl) {
         this.jobUrl = jobUrl;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+    
+    public String getCoverLetter() {
+        return coverLetter;
+    }
+
+    public void setCoverLetter(String coverLetter) {
+        this.coverLetter = coverLetter;
     }
 
     public ApplicationStatus getStatus() {

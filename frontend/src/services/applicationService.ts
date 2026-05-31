@@ -15,6 +15,12 @@ export async function createApplication(application: JobApplication) {
   return response.data;
 }
 
+// Bewerbung im Backend aktualisieren
+export async function updateApplication(id: number, application: JobApplication) {
+  const response = await axios.put<JobApplication>(`${API_URL}/${id}`, application);
+  return response.data;
+}
+
 // Bewerbung im Backend loeschen
 export async function deleteApplication(id: number) {
   await axios.delete(`${API_URL}/${id}`);

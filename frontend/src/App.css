@@ -133,3 +133,79 @@ button:hover {
 .delete-button:hover {
   background-color: #b91c1c;
 }
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.list-header h2 {
+  margin: 0;
+}
+
+.filter-select {
+  max-width: 240px;
+}
+
+.application-info {
+  flex: 1;
+}
+
+.application-actions {
+  min-width: 220px;
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+@media (max-width: 700px) {
+  .application-item {
+    flex-direction: column;
+  }
+
+  .application-actions {
+    min-width: 100%;
+  }
+
+  .list-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-select {
+    max-width: 100%;
+  }
+}
+.header-actions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.job-list {
+  display: grid;
+  gap: 16px;
+}
+
+.job-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 18px;
+  background-color: #f9fafb;
+}
+
+.job-card h3 {
+  margin-top: 0;
+  color: #1f2937;
+}
+
+.secondary-button {
+  background-color: #6b7280;
+}
+
+.secondary-button:hover {
+  background-color: #4b5563;
+}
